@@ -116,7 +116,7 @@ variable "tfc_agent_role" {
 variable "cluster_name" {
   description = "cluster name"
   type        = string
-  default     = "eks-test-june"
+  default     = "eks-test"
 }
 
 variable "oidc_provider_arn" {
