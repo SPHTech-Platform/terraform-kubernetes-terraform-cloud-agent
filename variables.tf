@@ -102,3 +102,24 @@ variable "tfc_url" {
   description = "The Terraform Cloud endpoint.  Must be changed if using Terraform Enterprise."
 }
 
+variable "tfc_agent_accounts" {
+  description = "Account number of which tfc agent manages"
+  type        = list(string)
+}
+
+variable "tfc_agent_role" {
+  description = "Role name which tfc agent assume"
+  type        = string
+  default     = "tfc-agent-iam-role"
+}
+
+variable "cluster_name" {
+  description = "cluster name"
+  type        = string
+  default     = "eks-test-june"
+}
+
+variable "oidc_provider_arn" {
+  description = "ARN of the OIDC Provider for IRSA"
+  type        = string
+}
