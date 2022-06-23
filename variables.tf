@@ -104,6 +104,6 @@ variable "tfc_url" {
 
 variable "annotations" {
   description = "Add annotations for service accounts"
-  type    = map(string)
-  default = {}
+  type        = map(string)
+  default     = {}
 }
