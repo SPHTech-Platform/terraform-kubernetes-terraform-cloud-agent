@@ -116,10 +116,16 @@ variable "tfc_agent_role" {
 variable "cluster_name" {
   description = "cluster name"
   type        = string
-  default     = "eks-test"
+  default     = "eks-test-june"
 }
 
 variable "oidc_provider_arn" {
   description = "ARN of the OIDC Provider for IRSA"
   type        = string
+}
+
+variable "create_aws_eks_irsa_role" {
+  type        = bool
+  default     = false
+  description = "Enable only for AWS EKS SA Annotations"
 }
