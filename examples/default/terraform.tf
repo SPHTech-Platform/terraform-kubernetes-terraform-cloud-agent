@@ -1,4 +1,4 @@
 provider "kubernetes" {
-# example supports minikube
+  # example supports minikube
   config_path = "~/.kube/config"
 }

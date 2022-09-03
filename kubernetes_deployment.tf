@@ -95,7 +95,7 @@ resource "kubernetes_deployment" "tfc_agent" {
         }
 
         automount_service_account_token = true
-        service_account_name            = var.cluster_access ? kubernetes_service_account.tfc_agent_service_account[0].metadata[0].name : "default"
+        service_account_name            = kubernetes_service_account.tfc_agent_service_account.metadata[0].name
       }
     }
   }

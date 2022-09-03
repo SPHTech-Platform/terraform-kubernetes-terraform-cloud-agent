@@ -1,5 +1,5 @@
 resource "kubernetes_cluster_role_binding" "tfc_agent_cluster_role_binding" {
-  count = var.cluster_access ? 1 : 0
+  count = var.create_cluster_role ? 1 : 0
 
   metadata {
     labels = {
@@ -18,7 +18,7 @@ resource "kubernetes_cluster_role_binding" "tfc_agent_cluster_role_binding" {
   }
   subject {
     kind      = "ServiceAccount"
-    name      = kubernetes_service_account.tfc_agent_service_account[0].metadata[0].name
+    name      = kubernetes_service_account.tfc_agent_service_account.metadata[0].name
     namespace = var.namespace
   }
 }

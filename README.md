@@ -58,9 +58,9 @@ No modules.
 | <a name="input_agent_replicas"></a> [agent\_replicas](#input\_agent\_replicas) | Replicacount of the terraform cloud agent deployment. | `number` | `1` | no |
 | <a name="input_agent_token"></a> [agent\_token](#input\_agent\_token) | The TFC agent token generated when the agent was created. | `string` | n/a | yes |
 | <a name="input_agent_version"></a> [agent\_version](#input\_agent\_version) | Version of the Terraform Cloud Agent docker image. | `string` | `"latest"` | no |
-| <a name="input_cluster_access"></a> [cluster\_access](#input\_cluster\_access) | When true, provides the agent access to the cluster to manage Kubernetes resources. | `bool` | `false` | no |
-| <a name="input_cluster_access_rbac_api_groups"></a> [cluster\_access\_rbac\_api\_groups](#input\_cluster\_access\_rbac\_api\_groups) | Additional rbac api groups for the rbac role | `list(string)` | `[]` | no |
-| <a name="input_cluster_access_rbac_resources"></a> [cluster\_access\_rbac\_resources](#input\_cluster\_access\_rbac\_resources) | Additional rbac resources for the rbac role | `list(string)` | `[]` | no |
+| <a name="input_cluster_role_rbac_api_groups"></a> [cluster\_role\_rbac\_api\_groups](#input\_cluster\_role\_rbac\_api\_groups) | Additional rbac api groups for the rbac role | `list(string)` | `[]` | no |
+| <a name="input_cluster_role_rbac_resources"></a> [cluster\_role\_rbac\_resources](#input\_cluster\_role\_rbac\_resources) | Additional rbac resources for the rbac role | `list(string)` | `[]` | no |
+| <a name="input_create_cluster_role"></a> [create\_cluster\_role](#input\_create\_cluster\_role) | When true, create a ClusterRole which provides the agent access to the cluster to manage Kubernetes resources. | `bool` | `false` | no |
 | <a name="input_create_namespace"></a> [create\_namespace](#input\_create\_namespace) | When true, creates the namespace for the Terraform Cloud Agent. | `bool` | `false` | no |
 | <a name="input_limits_cpu"></a> [limits\_cpu](#input\_limits\_cpu) | CPU hard limits. | `string` | `"2"` | no |
 | <a name="input_limits_memory"></a> [limits\_memory](#input\_limits\_memory) | Memory hard limits. | `string` | `"2Gi"` | no |
@@ -73,7 +73,10 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_tfc_agent"></a> [tfc\_agent](#output\_tfc\_agent) | Name of the TFC Agent Deployment |
+| <a name="output_tfc_agent_service_account"></a> [tfc\_agent\_service\_account](#output\_tfc\_agent\_service\_account) | Name of the Service Account for TFC Agent |
 <!-- END_TF_DOCS -->
 
 **Note**: This is a community module and is not supported by HashiCorp.

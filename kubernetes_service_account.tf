@@ -1,6 +1,4 @@
 resource "kubernetes_service_account" "tfc_agent_service_account" {
-  count = var.cluster_access ? 1 : 0
-
   metadata {
     labels = {
       "app.kubernetes.io/name"           = "terraform-cloud-agent"

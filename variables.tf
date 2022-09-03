@@ -43,22 +43,22 @@ variable "agent_version" {
   description = "Version of the Terraform Cloud Agent docker image."
 }
 
-variable "cluster_access" {
+variable "create_cluster_role" {
+  description = "When true, create a ClusterRole which provides the agent access to the cluster to manage Kubernetes resources."
   type        = bool
   default     = false
-  description = "When true, provides the agent access to the cluster to manage Kubernetes resources."
 }
 
-variable "cluster_access_rbac_api_groups" {
-  type        = list(string)
-  default     = []
+variable "cluster_role_rbac_api_groups" {
   description = "Additional rbac api groups for the rbac role"
-}
-
-variable "cluster_access_rbac_resources" {
   type        = list(string)
   default     = []
+}
+
+variable "cluster_role_rbac_resources" {
   description = "Additional rbac resources for the rbac role"
+  type        = list(string)
+  default     = []
 }
 
 variable "create_namespace" {
